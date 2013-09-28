@@ -1,7 +1,7 @@
 Summary:	The GLib ICE implementation
 Name:		libnice
 Version:	0.1.4
-Release:	1
+Release:	2
 License:	LGPL v2 and MPL v1.1
 Group:		Libraries
 Source0:	http://nice.freedesktop.org/releases/%{name}-%{version}.tar.gz
@@ -107,7 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libnice.so
-%{_libdir}/libnice.la
 %{_includedir}/nice
 %{_includedir}/stun
 %{_pkgconfigdir}/nice.pc
