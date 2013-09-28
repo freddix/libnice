@@ -57,14 +57,6 @@ Requires:	%{name} = %{version}-%{release}
 %description -n gstreamer-nice
 Nice plugin fofr gstreamer.
 
-%package -n gstreamer010-nice
-Summary:	Nice plguin for gstreamer
-Group:		Libraries
-Requires:	%{name} = %{version}-%{release}
-
-%description -n gstreamer010-nice
-Nice plugin fofr gstreamer.
-
 %prep
 %setup -q
 
@@ -79,6 +71,7 @@ mkdir m4
 %configure \
 	--disable-silent-rules	\
 	--disable-static	\
+	--with-gstreamer-0.10=no	\
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
@@ -88,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gstreamer-0.10/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gstreamer*/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -118,8 +111,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n gstreamer-nice
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gstreamer-1.0/libgstnice.so
-
-%files -n gstreamer010-nice
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/gstreamer-0.10/libgstnice010.so
 
