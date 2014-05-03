@@ -1,11 +1,11 @@
 Summary:	The GLib ICE implementation
 Name:		libnice
-Version:	0.1.4
-Release:	2
+Version:	0.1.6
+Release:	1
 License:	LGPL v2 and MPL v1.1
 Group:		Libraries
 Source0:	http://nice.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	315c457b092980a4a9a0bea9f0723cce
+# Source0-md5:	8eff8e25912db1504afc77acc0203d35
 URL:		http://nice.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -61,9 +61,8 @@ Nice plugin fofr gstreamer.
 %setup -q
 
 %build
-mkdir m4
-%{__gtkdocize}
 %{__libtoolize}
+%{__gtkdocize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
