@@ -1,11 +1,11 @@
 Summary:	The GLib ICE implementation
 Name:		libnice
-Version:	0.1.6
+Version:	0.1.7
 Release:	1
 License:	LGPL v2 and MPL v1.1
 Group:		Libraries
 Source0:	http://nice.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	8eff8e25912db1504afc77acc0203d35
+# Source0-md5:	ed74abea19b3f049baf095f137388f2a
 URL:		http://nice.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gstreamer*/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/{,gstreamer*/}*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
