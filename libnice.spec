@@ -1,16 +1,17 @@
 Summary:	The GLib ICE implementation
 Name:		libnice
-Version:	0.1.7
+Version:	0.1.8
 Release:	1
 License:	LGPL v2 and MPL v1.1
 Group:		Libraries
 Source0:	http://nice.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	ed74abea19b3f049baf095f137388f2a
+# Source0-md5:	3042d1c3281d098ef1b98d01479b4192
 URL:		http://nice.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel
 BuildRequires:	gnutls-devel
+BuildRequires:	gobject-introspection-devel
 BuildRequires:	gssdp-devel
 BuildRequires:	gstreamer-plugins-base-devel
 BuildRequires:	gstreamer010-plugins-base-devel
@@ -95,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/stund
 %attr(755,root,root) %ghost %{_libdir}/libnice.so.??
 %attr(755,root,root) %{_libdir}/libnice.so.*.*.*
+%{_libdir}/girepository-1.0/Nice-0.1.typelib
 
 %files devel
 %defattr(644,root,root,755)
@@ -102,6 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/nice
 %{_includedir}/stun
 %{_pkgconfigdir}/nice.pc
+%{_datadir}/gir-1.0/Nice-0.1.gir
 
 %files apidocs
 %defattr(644,root,root,755)
